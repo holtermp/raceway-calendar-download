@@ -1,6 +1,6 @@
 
 module.exports = {
-  entry: './webpack.config.js',
+    entry: './raceway-calendar-to-ics.js',
   output: {
     filename: 'main.js'
   },
