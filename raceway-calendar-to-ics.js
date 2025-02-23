@@ -1,4 +1,3 @@
-
 var saveAs = saveAs || function (e) {
     "use strict";
     if (typeof e === "undefined" || typeof navigator !== "undefined" && /MSIE [1-9]\./.test(navigator.userAgent)) {
@@ -406,5 +405,4 @@ function getRaceEvents() {
     //console.log(cal.calendar());
     cal.download();
 }
-
 getRaceEvents();

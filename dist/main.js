@@ -1,0 +1,1 @@
+(()=>{var r={956:r=>{r.exports={entry:"./webpack.config.js",output:{filename:"main.js"}}}},e={};!function t(o){var n=e[o];if(void 0!==n)return n.exports;var p=e[o]={exports:{}};return r[o](p,p.exports,t),p.exports}(956)})();
