@@ -388,9 +388,9 @@ function toEvent(row) {
     event.end = (dates[1] + " " + times[1]).trim();
     return event;
 }
-function getRaceEvents() {
+function getRaceEvents(dom) {
     cal = ics();
-    let calendarTable = document.getElementsByClassName("terminkalender")[0];
+    let calendarTable = dom.getElementsByClassName("terminkalender")[0];
     let rows = calendarTable.getElementsByTagName("tr");
     for (let i = 0; i < rows.length; i++) {
         let row = rows[i];
@@ -405,4 +405,14 @@ function getRaceEvents() {
     //console.log(cal.calendar());
     cal.download();
 }
-getRaceEvents();
+//getRaceEvents(document);
+
+function getSourceAsDOM(url) {
+    xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", url, false);
+    xmlhttp.send();
+    parser = new DOMParser();
+    return parser.parseFromString(xmlhttp.responseText, "text/html");
+}
+
+getRaceEvents(getSourceAsDOM("http://raceway-frankfurt.de/?page_id=33"));
